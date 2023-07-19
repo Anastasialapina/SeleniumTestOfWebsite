@@ -20,9 +20,13 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+class BucketPagLocators():
     BUCKET_BUTTON = (By.CSS_SELECTOR,
         "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
     ITEMS_TO_BUY = (By.CLASS_NAME, "col-sm-6 h3")
     MESSAGE_CONTINUE_SHOPPING = (By.CSS_SELECTOR, "#content_inner > p > a")
-    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+
 
