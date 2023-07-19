@@ -2,16 +2,16 @@ from .base_page import BasePage
 from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
-    def add_to_bucket(self):
+    def add_to_basket(self):
         self.button_should_be_able_to()
-        button = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_BUCKET)
+        button = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         button.click()
 
     def button_should_be_able_to(self):
-        assert self.is_element_present(*ProductPageLocators.BUTTON_ADD_TO_BUCKET), "Button for adding to bucket not found"
+        assert self.is_element_present(*ProductPageLocators.BUTTON_ADD_TO_BASKET), "Button for adding to basket not found"
 
     def message_about_add_product_should_be_able_to(self):
-        assert self.is_element_present(*ProductPageLocators.MESSAGE_ABOUT_NAME), "Message about adding to bucket not found"
+        assert self.is_element_present(*ProductPageLocators.MESSAGE_ABOUT_NAME), "Message about adding to basket not found"
 
     def product_name_should_be_able_to(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE_ABOUT_NAME), "Product name not found"

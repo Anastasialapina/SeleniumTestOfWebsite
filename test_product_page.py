@@ -22,7 +22,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     page = ProductPage(browser, link)
     page.open()
     # add
-    page.add_to_bucket()
+    page.add_to_basket()
     page.solve_quiz_and_get_code()
     page.check_product_name(page)
     page.check_message_about_adding(page)
@@ -36,7 +36,7 @@ def test_guest_can_add_product_to_basket_with_promo(browser, product):
     # check
     page.should_be_promo_url()
     # add
-    page.add_to_bucket()
+    page.add_to_basket()
     page.solve_quiz_and_get_code()
     page.check_product_name(page)
     page.check_message_about_adding(page)
@@ -48,7 +48,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
-    page.add_to_bucket()
+    page.add_to_basket()
     page.should_not_be_success_message()
 
 def test_guest_cant_see_success_message(browser):
@@ -83,9 +83,9 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = BasketPage(browser, link)
     page.open()
-    page.go_to_bucket()
-    page.should_not_found_prodict_in_bucket()
-    page.should_message_bucket_is_empty()
+    page.go_to_basket()
+    page.should_not_found_prodict_in_basket()
+    page.should_message_basket_is_empty()
 
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)
@@ -111,7 +111,7 @@ class TestUserAddToBasketFromProductPage():
         page.open()
         page.should_be_authorized_user()
         # add
-        page.add_to_bucket()
+        page.add_to_basket()
         page.solve_quiz_and_get_code()
         page.check_product_name(page)
         page.check_message_about_adding(page)
